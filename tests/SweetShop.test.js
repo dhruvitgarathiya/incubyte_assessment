@@ -46,3 +46,5 @@ describe("sweet shop - add sweet", () => {
     expect(sweet[0].name).tobe("gulab jambu");
   });
 });
+
+// i had ran the test case and it was failed due to not implementing the funcationality , now i am gonna write the code for functionality
