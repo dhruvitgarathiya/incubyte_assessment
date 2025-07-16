@@ -241,4 +241,10 @@ describe("sweet shop - purchase sweet", () => {
     const sweet = shop.viewSweets()[0];
     expect(sweet.quantity).toBe(7);
   });
+
+  test("should throw error if sweet ID does not exist", () => {
+    expect(() => {
+      shop.purchase(99, 2);
+    }).toThrow("Sweet not found");
+  });
 });
