@@ -100,4 +100,6 @@ describe("sweet shop - add sweet", () => {
       });
     }).toThrow("sweet this id already exists");
   });
+  //ran the test case and failed succesfully
+  //implemented the function , test cases passed
 });

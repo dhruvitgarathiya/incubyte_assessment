@@ -12,6 +12,10 @@ class SweetShop {
     if (sweet.quantity <= 0) {
       throw new Error("invalid quantity");
     }
+    const duplicate = this.sweets.find(s => s.id === sweet.id);
+    if (duplicate) {
+      throw new Error("sweet this id already exists");
+    }
     this.sweets.push(sweet);
   }
 
