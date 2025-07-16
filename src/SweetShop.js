@@ -65,6 +65,9 @@ class SweetShop {
     if (!sweet) {
       throw new Error("Sweet not found");
     }
+    if (qty > sweet.quantity) {
+      throw new Error("Not enough stock");
+    }
     sweet.quantity -= qty;
   }
 }
