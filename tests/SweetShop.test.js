@@ -254,3 +254,24 @@ describe("sweet shop - purchase sweet", () => {
     }).toThrow("Not enough stock");
   });
 });
+
+describe("sweet shop - restock sweet", () => {
+  let shop;
+
+  beforeEach(() => {
+    shop = new SweetShop();
+    shop.addSweets({
+      id: 1,
+      name: "Kaju Katli",
+      category: "Nut-Based",
+      price: 50,
+      quantity: 10,
+    });
+  });
+
+  test("should increase quantity when restock is successful", () => {
+    shop.restock(1, 5);
+    const sweet = shop.viewSweets()[0];
+    expect(sweet.quantity).toBe(15);
+  });
+});
