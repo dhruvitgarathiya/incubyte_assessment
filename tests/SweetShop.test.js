@@ -221,3 +221,24 @@ describe("sweet shop - search sweets", () => {
     expect(result.length).toBe(0);
   });
 });
+
+describe("sweet shop - purchase sweet", () => {
+  let shop;
+
+  beforeEach(() => {
+    shop = new SweetShop();
+    shop.addSweet({
+      id: 1,
+      name: "Kaju Katli",
+      category: "Nut-Based",
+      price: 50,
+      quantity: 10,
+    });
+  });
+
+  test("should reduce quantity when purchase is successful", () => {
+    shop.purchase(1, 3);
+    const sweet = shop.viewSweets()[0];
+    expect(sweet.quantity).toBe(7);
+  });
+});
