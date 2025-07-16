@@ -79,4 +79,25 @@ describe("sweet shop - add sweet", () => {
   });
   //succesfully ran the code and it failed , now will write the code that make this functionality possible
   //implemented this function , test case passed now moving to next
+
+  //now we will implement the logic for preventing duplicat id's
+  test("duplicates id's are not", () => {
+    shop.addSweets({
+      id: 4,
+      name: "shahi churma",
+      category: "fake",
+      price: 230,
+      quantity: 2,
+    });
+
+    expect(() => {
+      shop.addSweets({
+        id: 4,
+        name: "mamra na ladva",
+        category: "fake",
+        price: 234,
+        quantity: 3,
+      });
+    }).toThrow("sweet this id already exists");
+  });
 });

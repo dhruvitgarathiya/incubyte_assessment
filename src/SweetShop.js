@@ -10,7 +10,7 @@ class SweetShop {
       throw new Error("invalid price");
     }
     if (sweet.quantity <= 0) {
-      throw new Error("invalid price");
+      throw new Error("invalid quantity");
     }
     this.sweets.push(sweet);
   }
