@@ -52,6 +52,10 @@ class SweetShop {
       if (minPrice !== undefined && sweet.price < minPrice) {
         return false;
       }
+      if (maxPrice !== undefined && sweet.price > maxPrice) {
+        return false;
+      }
+
       return true;
     });
   }

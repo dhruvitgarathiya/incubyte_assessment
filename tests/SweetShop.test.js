@@ -215,4 +215,9 @@ describe("sweet shop - search sweets", () => {
     const result = shop.searchSweet({ minPrice: 25, maxPrice: 40 });
     expect(result.length).toBe(2); // Gulab Jamun and Peda
   });
+
+  test("should return empty array if no sweets match", () => {
+    const result = shop.searchSweet({ name: "laddu" });
+    expect(result.length).toBe(0);
+  });
 });
