@@ -280,4 +280,14 @@ describe("sweet shop - restock sweet", () => {
       shop.restock(99, 3);
     }).toThrow("Sweet not found");
   });
+
+  test("should throw error if restock quantity is zero or negative", () => {
+    expect(() => {
+      shop.restock(1, 0);
+    }).toThrow("Invalid restock quantity");
+
+    expect(() => {
+      shop.restock(1, -5);
+    }).toThrow("Invalid restock quantity");
+  });
 });
