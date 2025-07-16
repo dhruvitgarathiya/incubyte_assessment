@@ -122,4 +122,21 @@ describe("sweet shop - add sweet", () => {
     const sweets = shop.viewSweets();
     expect(sweets).toEqual([]);
   });
+
+  //added item should be visible in sweet cart
+  test("should return all the list that have been", () => {
+    shop.addSweets({
+      id: 1,
+      name: "kaju-katri",
+      category: "fake",
+      price: 220,
+      quantity: 3,
+    });
+
+    const sweets = shop.viewSweets();
+
+    expect(sweets.length).toBe(1);
+    expect(sweets[0].name).toBe("katri");
+    //test case ran and test passed
+  });
 });
