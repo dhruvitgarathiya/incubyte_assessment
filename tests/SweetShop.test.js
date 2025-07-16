@@ -247,4 +247,10 @@ describe("sweet shop - purchase sweet", () => {
       shop.purchase(99, 2);
     }).toThrow("Sweet not found");
   });
+
+  test("should throw error if quantity is more than stock", () => {
+    expect(() => {
+      shop.purchase(1, 20); // only 10 in stock
+    }).toThrow("Not enough stock");
+  });
 });
