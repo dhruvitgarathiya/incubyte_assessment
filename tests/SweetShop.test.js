@@ -136,7 +136,8 @@ describe("sweet shop - add sweet", () => {
     const sweets = shop.viewSweets();
 
     expect(sweets.length).toBe(1);
-    expect(sweets[0].name).toBe("katri");
-    //test case ran and test passed
+    expect(sweets[0].name).toBe("kaju-katri");
+    //test case ran and test failed
+    //test cases passed
   });
 });
