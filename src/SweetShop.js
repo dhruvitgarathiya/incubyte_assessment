@@ -16,4 +16,4 @@ class SweetShop {
 }
 
 //exporting for accessibilty by test folder
-module.export = SweetShop;
+module.exports = SweetShop;

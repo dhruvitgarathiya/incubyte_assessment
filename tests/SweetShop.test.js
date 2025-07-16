@@ -15,7 +15,7 @@ but then we will write the code for functionality and then we will run the test 
 //so here is the first add sweets test case
 
 //exporting the sweetshop accesing the functions
-const sweetShop = require("../src/SweetShop");
+const SweetShop = require("../src/SweetShop");
 
 //test function
 describe("sweet shop - add sweet", () => {
@@ -23,12 +23,12 @@ describe("sweet shop - add sweet", () => {
 
   beforeEach(() => {
     //making instance of sweetShop class
-    shop = new sweetShop();
+    shop = new SweetShop();
   });
 
   test("should add new item to list ", () => {
     //testing addsweet funcationality by adding sweet
-    shop.addsweet({
+    shop.addSweets({
       id: 1,
       name: "gulab jambu",
       category: "made with chasni",
@@ -40,10 +40,10 @@ describe("sweet shop - add sweet", () => {
     const sweet = shop.viewSweets();
 
     //checking if added sweet we can see or not
-    expect(sweet.length).tobe(1);
+    expect(sweet.length).toBe(1);
 
     // double checking for better checking
-    expect(sweet[0].name).tobe("gulab jambu");
+    expect(sweet[0].name).toBe("gulab jambu");
   });
 });
 
