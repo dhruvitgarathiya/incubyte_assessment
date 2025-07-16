@@ -170,3 +170,39 @@ describe("sweet shop- delete sweet", () => {
     }).toThrow("Sweet not found");
   });
 });
+
+describe("sweet shop - search sweets", () => {
+  let shop;
+
+  beforeEach(() => {
+    shop = new SweetShop();
+
+    shop.addSweets({
+      id: 1,
+      name: "Kaju Katli",
+      category: "Nut-Based",
+      price: 50,
+      quantity: 10,
+    });
+    shop.addSweets({
+      id: 2,
+      name: "Gulab Jamun",
+      category: "Milk-Based",
+      price: 30,
+      quantity: 20,
+    });
+    shop.addSweets({
+      id: 3,
+      name: "Peda",
+      category: "Milk-Based",
+      price: 20,
+      quantity: 15,
+    });
+  });
+
+  test("should search sweets by name", () => {
+    const result = shop.searchSweet({ name: "gulab" });
+    expect(result.length).toBe(1);
+    expect(result[0].name).toBe("Gulab Jamun");
+  });
+});
