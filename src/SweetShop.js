@@ -62,7 +62,9 @@ class SweetShop {
 
   purchase(id, qty) {
     const sweet = this.sweets.find(s => s.id === id);
-
+    if (!sweet) {
+      throw new Error("Sweet not found");
+    }
     sweet.quantity -= qty;
   }
 }
