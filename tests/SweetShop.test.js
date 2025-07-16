@@ -1,0 +1,48 @@
+//starting of my project
+
+// as i am writing test cases for my assesment
+
+// first will be the add sweet test case
+
+/* as i have read about the test drvien development 
+
+first we have to write test cases that check the funcationality which we want to implement then we will run the test cases as it will fail obviously as we have not implemented the functionality yet
+
+but then we will write the code for functionality and then we will run the test as it will pass the test case that how tdd works as per my knowledge
+
+*/
+
+//so here is the first add sweets test case
+
+//exporting the sweetshop accesing the functions
+const sweetShop = require("../src/SweetShop");
+
+//test function
+describe("sweet shop - add sweet", () => {
+  let shop;
+
+  beforeEach(() => {
+    //making instance of sweetShop class
+    shop = new sweetShop();
+  });
+
+  test("should add new item to list ", () => {
+    //testing addsweet funcationality by adding sweet
+    shop.addsweet({
+      id: 1,
+      name: "gulab jambu",
+      category: "made with chasni",
+      price: 50,
+      quantity: 10,
+    });
+
+    //more of the part of viewSweets testing but here it is necessary to add
+    const sweet = shop.viewSweets();
+
+    //checking if added sweet we can see or not
+    expect(sweet.length).tobe(1);
+
+    // double checking for better checking
+    expect(sweet[0].name).tobe("gulab jambu");
+  });
+});
