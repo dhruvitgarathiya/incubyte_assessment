@@ -72,7 +72,11 @@ class SweetShop {
   }
 
   restock(id, qty) {
+    if (qty <= 0) {
+      throw new Error("Invalid restock quantity");
+    }
     const sweet = this.sweets.find(s => s.id === id);
+
     if (!sweet) {
       throw new Error("Sweet not found");
     }
