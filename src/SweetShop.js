@@ -46,6 +46,9 @@ class SweetShop {
       if (name && !sweet.name.toLowerCase().includes(name.toLowerCase())) {
         return false;
       }
+      if (category && sweet.category !== category) {
+        return false;
+      }
       return true;
     });
   }
