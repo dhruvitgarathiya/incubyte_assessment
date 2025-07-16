@@ -30,6 +30,7 @@ class SweetShop {
     return this.sweets;
   }
 
+  //delete sweet functionality
   deleteSweet(id) {
     const index = this.sweets.findIndex(s => s.id === id);
 
@@ -38,7 +39,16 @@ class SweetShop {
     }
     this.sweets.splice(index, 1);
   }
-}
 
+  //search sweet
+  searchSweet({ name, category, minPrice, maxPrice }) {
+    return this.sweets.filter(sweet => {
+      if (name && !sweet.name.toLowerCase().includes(name.toLowerCase())) {
+        return false;
+      }
+      return true;
+    });
+  }
+}
 //exporting for accessibilty by test folder
 module.exports = SweetShop;
