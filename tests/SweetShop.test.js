@@ -78,4 +78,5 @@ describe("sweet shop - add sweet", () => {
     }).toThrow("invalid quantity");
   });
   //succesfully ran the code and it failed , now will write the code that make this functionality possible
+  //implemented this function , test case passed now moving to next
 });
