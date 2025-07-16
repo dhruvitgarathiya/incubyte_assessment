@@ -227,7 +227,7 @@ describe("sweet shop - purchase sweet", () => {
 
   beforeEach(() => {
     shop = new SweetShop();
-    shop.addSweet({
+    shop.addSweets({
       id: 1,
       name: "Kaju Katli",
       category: "Nut-Based",
