@@ -141,3 +141,32 @@ describe("sweet shop - add sweet", () => {
     //test cases passed
   });
 });
+
+//here is delete sweet test cases
+
+describe("sweet shop- delete sweet", () => {
+  //adding the items to cart
+  let shop;
+  beforeEach(() => {
+    shop = new SweetShop();
+    shop.addSweets({
+      id: 20,
+      name: "rasgulla",
+      category: "milk -based",
+      price: 20,
+      quantity: 20,
+    });
+  });
+
+  test("should delete sweet by id ", () => {
+    shop.deleteSweet(10);
+    const sweets = shop.viewSweets();
+    expect(sweets.length).toBe(0);
+  });
+
+  test("should throw error if sweet id not found", () => {
+    expect(() => {
+      shop.deleteSweet(99);
+    }).toThrow("Sweet not found");
+  });
+});
