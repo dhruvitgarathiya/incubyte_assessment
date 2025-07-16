@@ -205,4 +205,9 @@ describe("sweet shop - search sweets", () => {
     expect(result.length).toBe(1);
     expect(result[0].name).toBe("Gulab Jamun");
   });
+
+  test("should search sweets by category", () => {
+    const result = shop.searchSweet({ category: "Milk-Based" });
+    expect(result.length).toBe(2);
+  });
 });
