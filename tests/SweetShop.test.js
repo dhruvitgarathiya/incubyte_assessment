@@ -116,4 +116,10 @@ describe("sweet shop - add sweet", () => {
   });
   //code ran succesfully, test case failed
   //feature implemented , test case passed
+
+  //viewsweet testcase that if list is empty return empty list
+  test("if sweet shop is empty return empty list", () => {
+    const sweets = shop.viewSweets();
+    expect(sweets).toEqual([]);
+  });
 });
