@@ -6,6 +6,12 @@ class SweetShop {
 
   //addsweets method that adds the sweet in static array
   addSweets(sweet) {
+    const requiredField = ["id", "name", "category", "price", "quantity"];
+    for (const field of requiredField) {
+      if (sweet[field] === undefined || sweet[field] === null) {
+        throw new Error("Missing required field");
+      }
+    }
     if (sweet.price <= 0) {
       throw new Error("invalid price");
     }

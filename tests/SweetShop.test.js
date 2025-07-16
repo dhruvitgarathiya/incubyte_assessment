@@ -102,4 +102,18 @@ describe("sweet shop - add sweet", () => {
   });
   //ran the test case and failed succesfully
   //implemented the function , test cases passed
+
+  //test case for missing field checking
+  test("missing field required", () => {
+    expect(() => {
+      shop.addSweets({
+        id: 5,
+        name: "kaju katri",
+        category: "fake",
+        quantity: 455,
+      });
+    }).toThrow("Missing required field");
+  });
+  //code ran succesfully, test case failed
+  //feature implemented , test case passed
 });
