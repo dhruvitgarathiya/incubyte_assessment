@@ -41,5 +41,14 @@ i have mainly used javascript for writing classes and regarding functions to per
    Committed and pushed
 
 5. purchase sweet
+   Test for reducing stock
+   Test for invalid ID
+   Test for insufficient stock
+   Feature implemented and committed
 
 6. increase and decrease the quantity of sweets
+   Wrote test to increase quantity of a sweet by ID
+   Wrote test for invalid ID
+   Wrote test for zero or negative quantity
+   Implemented `restock(id, qty)` method
+   All test cases passed and committed
