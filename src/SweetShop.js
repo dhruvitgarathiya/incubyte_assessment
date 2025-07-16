@@ -70,6 +70,12 @@ class SweetShop {
     }
     sweet.quantity -= qty;
   }
+
+  restock(id, qty) {
+    const sweet = this.sweets.find(s => s.id === id);
+
+    sweet.quantity += qty;
+  }
 }
 //exporting for accessibilty by test folder
 module.exports = SweetShop;
