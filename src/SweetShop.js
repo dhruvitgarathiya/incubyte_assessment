@@ -6,6 +6,9 @@ class SweetShop {
 
   //addsweets method that adds the sweet in static array
   addSweets(sweet) {
+    if (sweet.price < 0) {
+      throw new Error("invalid price");
+    }
     this.sweets.push(sweet);
   }
 

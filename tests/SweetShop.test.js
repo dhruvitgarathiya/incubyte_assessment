@@ -46,6 +46,10 @@ describe("sweet shop - add sweet", () => {
     expect(sweet[0].name).toBe("gulab jambu");
   });
 
+  // i had ran the test case and it was failed due to not implementing the funcationality , now i am gonna write the code for functionality
+  //code succesfully written and excuted and tested.
+
+  //now my basic test case have been passed now i can add validation that price should not be negative.
   test("price should not be negative", () => {
     expect(() => {
       shop.addSweets({
@@ -57,8 +61,7 @@ describe("sweet shop - add sweet", () => {
       });
     }).toThrow("invalid price");
   });
+
+  //test code run succesfully and failed , now i will write code that will statisfy this conditions
+  // written the code for this and test case passed succesfully.
 });
-
-// i had ran the test case and it was failed due to not implementing the funcationality , now i am gonna write the code for functionality
-
-//now my basic test case have been passed now i can add validation that price should not be negative and quantity should not be negative.
