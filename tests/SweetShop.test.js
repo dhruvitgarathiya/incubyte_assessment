@@ -274,4 +274,10 @@ describe("sweet shop - restock sweet", () => {
     const sweet = shop.viewSweets()[0];
     expect(sweet.quantity).toBe(15);
   });
+
+  test("should throw error if sweet ID is not found", () => {
+    expect(() => {
+      shop.restock(99, 3);
+    }).toThrow("Sweet not found");
+  });
 });
