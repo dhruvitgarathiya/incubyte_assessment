@@ -158,8 +158,8 @@ describe("sweet shop- delete sweet", () => {
     });
   });
 
-  test("should delete sweet by id ", () => {
-    shop.deleteSweet(10);
+  test("should delete sweet by id", () => {
+    shop.deleteSweet(20);
     const sweets = shop.viewSweets();
     expect(sweets.length).toBe(0);
   });
