@@ -45,6 +45,20 @@ describe("sweet shop - add sweet", () => {
     // double checking for better checking
     expect(sweet[0].name).toBe("gulab jambu");
   });
+
+  test("price should not be negative", () => {
+    expect(() => {
+      shop.addSweets({
+        id: 2,
+        name: "rasmalai",
+        category: "fake",
+        price: -10,
+        quantity: 2,
+      });
+    }).toThrow("invalid price");
+  });
 });
 
 // i had ran the test case and it was failed due to not implementing the funcationality , now i am gonna write the code for functionality
+
+//now my basic test case have been passed now i can add validation that price should not be negative and quantity should not be negative.
