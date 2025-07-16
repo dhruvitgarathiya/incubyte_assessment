@@ -64,4 +64,18 @@ describe("sweet shop - add sweet", () => {
 
   //test code run succesfully and failed , now i will write code that will statisfy this conditions
   // written the code for this and test case passed succesfully.
+
+  //now i will write the code for test case for qunatity should not be negative
+  test("quantity should not be negative and zero", () => {
+    expect(() => {
+      shop.addSweets({
+        id: 3,
+        name: "penda",
+        category: "fake",
+        price: 200,
+        quantity: 0,
+      });
+    }).toThrow("invalid quantity");
+  });
+  //succesfully ran the code and it failed , now will write the code that make this functionality possible
 });
