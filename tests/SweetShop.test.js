@@ -210,4 +210,9 @@ describe("sweet shop - search sweets", () => {
     const result = shop.searchSweet({ category: "Milk-Based" });
     expect(result.length).toBe(2);
   });
+
+  test("should search sweets by price range", () => {
+    const result = shop.searchSweet({ minPrice: 25, maxPrice: 40 });
+    expect(result.length).toBe(2); // Gulab Jamun and Peda
+  });
 });
